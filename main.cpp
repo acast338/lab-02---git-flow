@@ -8,5 +8,10 @@ int main()
     std::cin >> name;
     std::cout << "Hello " << name << "!" << std::endl;
 
+#include "c-echo.h"
+
+int main(int argv, char** argc) {
+    std::cout << "Count of output: " << count(echo(argv,argc)) << std::endl;
+}
     return 0;
 }
