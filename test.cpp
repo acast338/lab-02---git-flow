@@ -1,5 +1,5 @@
 #include "c-echo.h"
-
+#include "c-count.h"
 #include "gtest/gtest.h"
 
 TEST(EchoTest, HelloWorld) {
@@ -27,6 +27,20 @@ TEST(EchoTest, AlyssaIsPerfect) {
     EXPECT_EQ("Alyssa is PERFECT!!", echo(4,test_val));
 }
 
+TEST(CountTest, HelloWorld) {
+    std::string test_str = "hello world";
+    EXPECT_EQ(2, count(test_str));
+}
+
+TEST(CountTest, EmptyString) {
+    std::string test_str = "";
+    EXPECT_EQ(0, count(test_str));
+}
+
+TEST(CountTest, ManySpaces) {
+    std::string test_str = "   this   string has     weird   spacing";
+    EXPECT_EQ(5, count(test_str));
+}
 
 int main(int argc, char **argv) {
   ::testing::InitGoogleTest(&argc, argv);
